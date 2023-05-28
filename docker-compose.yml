@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+
+  core:
+    container_name: car-api-core
+    #    restart: on-failure
+    image: car-api:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+      - rabbitmq
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+    networks:
+      - localstack
+
+  db:
+    container_name: car-api-postgres
+    image: postgres:alpine3.14
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: 123456789
+      POSTGRES_PASSWORD: 123456789
+    networks:
+      - localstack
+
+  adminer:
+    container_name: car-api-admin
+    image: adminer
+    ports:
+      - 9000:8080
+    networks:
+      - localstack
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: car-api-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - localstack
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+      interval: 5s
+      timeout: 15s
+      retries: 1
+
+networks:
+  localstack:
+    driver: bridge
