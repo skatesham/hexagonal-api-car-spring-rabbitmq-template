@@ -1,4 +1,4 @@
-package core.demo.app.extra.config;
+package core.demo.app.common.config;
 
 
 import core.demo.app.adapters.config.messaging.MessageSender;

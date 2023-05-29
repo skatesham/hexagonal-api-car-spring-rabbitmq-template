@@ -1,13 +1,13 @@
-package core.demo.app.integration.veiculo;
+package core.demo.app.integration;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import core.demo.app.core.domain.VeiculoEntity;
 import core.demo.app.adapters.persistence.jpa.VeiculoRepositoryJpa;
-import core.demo.app.extra.anotations.AppTest;
-import core.demo.app.extra.config.MessageSenderMock;
-import core.demo.app.extra.utils.UrlUtils;
+import core.demo.app.common.anotations.AppTest;
+import core.demo.app.common.config.MessageSenderMock;
+import core.demo.app.common.UrlUtils;
 import core.demo.app.adapters.web.dto.VeiculoRequest;
 import core.demo.app.adapters.messaging.VeiculoRequestedConsumer;
 import core.demo.app.templates.VeiculoRequestTemplates;

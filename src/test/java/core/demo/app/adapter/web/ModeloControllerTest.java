@@ -1,7 +1,7 @@
-package core.demo.app.interfaces.modelo;
+package core.demo.app.adapter.web;
 
-import core.demo.app.extra.anotations.AppTest;
-import core.demo.app.extra.utils.UrlUtils;
+import core.demo.app.common.anotations.AppTest;
+import core.demo.app.common.UrlUtils;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.hamcrest.CoreMatchers;

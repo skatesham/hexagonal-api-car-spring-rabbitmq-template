@@ -1,4 +1,4 @@
-package core.demo.app.interfaces.veiculo;
+package core.demo.app.adapter.web;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -8,9 +8,9 @@ import core.demo.app.adapters.messaging.VeiculoRequestedConsumer;
 import core.demo.app.utils.JsonUtils;
 import core.demo.app.core.domain.VeiculoEntity;
 import core.demo.app.adapters.persistence.jpa.VeiculoRepositoryJpa;
-import core.demo.app.extra.anotations.AppTest;
-import core.demo.app.extra.config.MessageSenderMock;
-import core.demo.app.extra.utils.UrlUtils;
+import core.demo.app.common.anotations.AppTest;
+import core.demo.app.common.config.MessageSenderMock;
+import core.demo.app.common.UrlUtils;
 import core.demo.app.templates.VeiculoEntityTemplates;
 import core.demo.app.templates.VeiculoRequestTemplates;
 import io.restassured.RestAssured;

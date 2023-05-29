@@ -1,4 +1,4 @@
-package core.demo.app.extra.anotations;
+package core.demo.app.common.anotations;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;

@@ -1,4 +1,4 @@
-package core.demo.app.extra.utils;
+package core.demo.app.common;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
