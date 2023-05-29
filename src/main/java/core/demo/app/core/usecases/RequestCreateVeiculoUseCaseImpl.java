@@ -5,7 +5,7 @@ import core.demo.app.adapters.web.dto.VeiculoRequest;
 import core.demo.app.core.domain.MarcaEntity;
 import core.demo.app.core.domain.ModeloEntity;
 import core.demo.app.core.domain.VeiculoEntity;
-import core.demo.app.core.domain.converter.VeiculoConverter;
+import core.demo.app.core.usecases.converter.VeiculoConverter;
 import core.demo.app.core.port.incoming.RequestCreateVeiculoUseCase;
 import core.demo.app.core.port.outgoing.*;
 import core.demo.app.core.usecases.exceptions.MarcaNotFound404Exception;

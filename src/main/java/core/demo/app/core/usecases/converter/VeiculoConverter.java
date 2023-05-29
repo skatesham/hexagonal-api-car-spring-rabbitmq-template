@@ -1,4 +1,4 @@
-package core.demo.app.core.domain.converter;
+package core.demo.app.core.usecases.converter;
 
 import core.demo.app.core.domain.VeiculoEntity;
 import core.demo.app.core.domain.MarcaEntity;
