@@ -5,7 +5,7 @@ import core.demo.app.adapters.clients.resquests.FipePriceRequest;
 import core.demo.app.core.domain.VeiculoEntity;
 import core.demo.app.core.port.incoming.VeiculoRequestedCreationUseCase;
 import core.demo.app.core.port.outgoing.*;
-import core.demo.app.core.usecases.exceptions.FipeIntegrationNotFoundException;
+import core.demo.app.core.usecases.exceptions.FipeIntegrationNotFoundDLQException;
 import core.demo.app.utils.DirtyValueUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class VeiculoRequestedCreationUseCaseImpl implements VeiculoRequestedCrea
 
         if (!StringUtils.isEmpty(fipePriceResponse.getErro())) {
             log.error("action=veiculo-creation status=error error={} id={}", fipePriceResponse.getErro(), veiculo.getId());
-            throw new FipeIntegrationNotFoundException();
+            throw new FipeIntegrationNotFoundDLQException();
         }
 
         final BigInteger precoFipe = DirtyValueUtils.convertToNumber(fipePriceResponse.getValor());
