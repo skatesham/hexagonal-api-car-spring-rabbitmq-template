@@ -1,4 +1,4 @@
-package core.demo.app.adapters.clients.resquests;
+package core.demo.app.adapters.client.resquests;
 
 import lombok.AllArgsConstructor;
 import lombok.Value;

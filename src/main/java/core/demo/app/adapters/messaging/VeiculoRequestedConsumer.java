@@ -1,7 +1,7 @@
 package core.demo.app.adapters.messaging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import core.demo.app.core.port.incoming.VeiculoRequestedCreationUseCase;
+import core.demo.app.core.port.incoming.CreateVeiculoRequestedUseCase;
 import core.demo.app.core.domain.VeiculoEntity;
 import core.demo.app.adapters.config.messaging.MessageSender;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class VeiculoRequestedConsumer {
 
     @Autowired
-    private VeiculoRequestedCreationUseCase veiculoRequestedCreationUseCase;
+    private CreateVeiculoRequestedUseCase createVeiculoRequestedUseCase;
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
@@ -30,7 +30,7 @@ public class VeiculoRequestedConsumer {
         try {
             log.trace("action=veiculo-requested status=start message={}", veiculoMessage);
             final VeiculoEntity veiculoEntity = objectMapper.readValue(veiculoMessage, VeiculoEntity.class);
-            veiculoRequestedCreationUseCase.processCreation(veiculoEntity);
+            createVeiculoRequestedUseCase.processCreation(veiculoEntity);
             log.trace("action=veiculo-requested status=success");
 
         } catch (Exception e) {

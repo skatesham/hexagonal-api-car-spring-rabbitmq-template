@@ -1,7 +1,7 @@
 package core.demo.app.core.port.outgoing;
 
-import core.demo.app.adapters.clients.resquests.FipePriceRequest;
-import core.demo.app.adapters.clients.resquests.FipePriceResponse;
+import core.demo.app.adapters.client.resquests.FipePriceRequest;
+import core.demo.app.adapters.client.resquests.FipePriceResponse;
 
 public interface RequestVeiculoPriceFipeIntegationPort {
 

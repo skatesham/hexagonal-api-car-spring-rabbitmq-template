@@ -1,9 +1,9 @@
 package core.demo.app.core.usecases;
 
 
-import core.demo.app.adapters.clients.resquests.FipePriceRequest;
+import core.demo.app.adapters.client.resquests.FipePriceRequest;
 import core.demo.app.core.domain.VeiculoEntity;
-import core.demo.app.core.port.incoming.VeiculoRequestedCreationUseCase;
+import core.demo.app.core.port.incoming.CreateVeiculoRequestedUseCase;
 import core.demo.app.core.port.outgoing.*;
 import core.demo.app.core.usecases.exceptions.FipeIntegrationNotFoundDLQException;
 import core.demo.app.utils.DirtyValueUtils;
@@ -18,7 +18,7 @@ import java.math.BigInteger;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class VeiculoRequestedCreationUseCaseImpl implements VeiculoRequestedCreationUseCase {
+public class CreateVeiculoRequestedUseCaseImpl implements CreateVeiculoRequestedUseCase {
 
     private final SaveVeiculoPort saveVeiculoPort;
     private final RequestVeiculoPriceFipeIntegationPort requestVeiculoPriceFipeIntegationPort;
