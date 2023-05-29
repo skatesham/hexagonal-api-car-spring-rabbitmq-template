@@ -1,7 +1,7 @@
 package core.demo.app.core.services;
 
 
-import core.demo.app.adapters.clients.FipePriceRequest;
+import core.demo.app.adapters.clients.resquests.FipePriceRequest;
 import core.demo.app.adapters.web.dto.VeiculoRequest;
 import core.demo.app.adapters.web.dto.VeiculoResponse;
 import core.demo.app.utils.DirtyValueUtils;

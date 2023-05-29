@@ -1,5 +1,7 @@
 package core.demo.app.adapters.clients;
 
+import core.demo.app.adapters.clients.resquests.FipePriceRequest;
+import core.demo.app.adapters.clients.resquests.FipePriceResponse;
 import core.demo.app.core.port.outgoing.RequestVeiculoPriceFipeIntegationPort;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;

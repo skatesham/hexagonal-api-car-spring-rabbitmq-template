@@ -14,7 +14,7 @@ public interface ModeloRepositoryJpa extends JpaRepository<ModeloEntity, UUID> {
 
     Optional<ModeloEntity> findByFipeId(Integer fipeId);
 
-    @Query("SELECT new core.demo.app.interfaces.modelo.ModeloResponse(s.id, s.name)"
+    @Query("SELECT new core.demo.app.adapters.web.dto.ModeloResponse(s.id, s.name)"
             + " FROM ModeloEntity s WHERE lower(s.name) LIKE concat('%', lower(?1), '%')"
     )
     Page<ModeloResponse> findByNameContainingIgnoreCase(String name, Pageable pageable);

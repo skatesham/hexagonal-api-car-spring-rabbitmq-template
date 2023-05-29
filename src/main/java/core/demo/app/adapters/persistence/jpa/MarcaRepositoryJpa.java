@@ -14,7 +14,7 @@ public interface MarcaRepositoryJpa extends JpaRepository<MarcaEntity, UUID> {
 
     Optional<MarcaEntity> findByFipeId(Integer fipeId);
 
-    @Query("SELECT new core.demo.app.interfaces.marca.MarcaResponse(a.id, a.name, count(m))"
+    @Query("SELECT new core.demo.app.adapters.web.dto.MarcaResponse(a.id, a.name, count(m))"
             + " FROM ModeloEntity m "
             + " JOIN m.marca a "
             + " GROUP BY a.id"
