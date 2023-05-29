@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class VeiculoRequestedConsumer {
+public class VeiculoRequestedInternalConsumer {
 
     @Autowired
     private CreateVeiculoRequestedUseCase createVeiculoRequestedUseCase;

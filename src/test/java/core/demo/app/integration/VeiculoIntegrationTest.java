@@ -9,7 +9,7 @@ import core.demo.app.common.anotations.AppTest;
 import core.demo.app.common.config.MessageSenderMock;
 import core.demo.app.common.UrlUtils;
 import core.demo.app.adapters.web.dto.VeiculoRequest;
-import core.demo.app.adapters.messaging.VeiculoRequestedConsumer;
+import core.demo.app.adapters.messaging.VeiculoRequestedInternalConsumer;
 import core.demo.app.templates.VeiculoRequestTemplates;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -42,7 +42,7 @@ class VeiculoIntegrationTest {
     @Autowired
     MessageSenderMock messageSenderMock;
     @Autowired
-    VeiculoRequestedConsumer veiculoRequestedConsumer;
+    VeiculoRequestedInternalConsumer veiculoRequestedInternalConsumer;
     @Value("${queue.name}")
     private String queueMessage;
 
@@ -82,7 +82,7 @@ class VeiculoIntegrationTest {
         String messageEvent = messageSenderMock.getTopic(queueMessage).get(0);
 
         // 2. Consume and Save Vehicle
-        veiculoRequestedConsumer.receive(messageEvent);
+        veiculoRequestedInternalConsumer.receive(messageEvent);
 
         List<VeiculoEntity> all = veiculoRepository.findAll();
         assertEquals(4, all.size()); // 1 new and 3 from setup-vehicle.sql
