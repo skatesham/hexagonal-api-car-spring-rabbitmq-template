@@ -26,7 +26,7 @@ public class CreateVeiculoRequestedUseCaseImpl implements CreateVeiculoRequested
     @Override
     @Transactional
     public void processCreation(final VeiculoEntity veiculo) {
-        log.trace("action=veiculo-creation status=start");
+        log.trace("action=veiculo-creation status=consuming");
         final var request = FipePriceRequest.of(veiculo.getMarca().getFipeId(), veiculo.getModelo().getFipeId(), veiculo.getAno());
         final var fipePriceResponse = requestVeiculoPriceFipeIntegationPort.requestVehiclePrice(request);
 
