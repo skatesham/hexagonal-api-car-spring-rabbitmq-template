@@ -1,9 +1,7 @@
 package core.demo.app.core.services;
 
 
-import core.demo.app.adapters.integration.FipeClient;
-import core.demo.app.adapters.messaging.VeiculoRequestedSender;
-import core.demo.app.adapters.integration.dto.FipePriceRequest;
+import core.demo.app.adapters.clients.FipePriceRequest;
 import core.demo.app.adapters.web.dto.VeiculoRequest;
 import core.demo.app.adapters.web.dto.VeiculoResponse;
 import core.demo.app.utils.DirtyValueUtils;
@@ -43,9 +41,8 @@ public class VeiculoService implements VeiculoRequestedCreationUseCase, ReadVeic
     private final ReadModeloByFipeIdPort readModeloByFipeIdPort;
     private final SaveVeiculoPort saveVeiculoPort;
     private final ReadPageVeiculoByPlatePort readPageVeiculoByPlatePort;
-
-    private final FipeClient fipeClient;
-    private final VeiculoRequestedSender veiculoRequestedSender;
+    private final SendAsyncVeiculeCreationPort sendAsyncVeiculeCreationPort;
+    private final RequestVeiculoPriceFipeIntegationPort requestVeiculoPriceFipeIntegationPort;
 
     @Override
     public VeiculoEntity scheduleCreation(final VeiculoRequest veiculoRequest) {
@@ -63,7 +60,7 @@ public class VeiculoService implements VeiculoRequestedCreationUseCase, ReadVeic
                 .orElseThrow(() -> new ModeloNotFoundException(veiculoRequest.getModeloId()));
 
         final VeiculoEntity newEntity = VeiculoConverter.toNewEntity(veiculoRequest, marca, modelo);
-        this.veiculoRequestedSender.send(newEntity);
+        this.sendAsyncVeiculeCreationPort.send(newEntity);
 
         log.trace("action=veiculo-creation status=scheduled placa={}", newEntity.getPlaca());
         return newEntity;
@@ -74,7 +71,7 @@ public class VeiculoService implements VeiculoRequestedCreationUseCase, ReadVeic
     public void processCreation(final VeiculoEntity veiculo) {
         log.trace("action=veiculo-creation status=start");
         final var request = FipePriceRequest.of(veiculo.getMarca().getFipeId(), veiculo.getModelo().getFipeId(), veiculo.getAno());
-        final var fipePriceResponse = fipeClient.requestVehiclePrice(request);
+        final var fipePriceResponse = requestVeiculoPriceFipeIntegationPort.requestVehiclePrice(request);
 
         if (!StringUtils.isEmpty(fipePriceResponse.getErro())) {
             log.error("action=veiculo-creation status=error error={} id={}", fipePriceResponse.getErro(), veiculo.getId());

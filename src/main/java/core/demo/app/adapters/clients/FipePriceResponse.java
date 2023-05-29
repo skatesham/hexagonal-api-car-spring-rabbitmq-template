@@ -1,4 +1,4 @@
-package core.demo.app.adapters.integration.dto;
+package core.demo.app.adapters.clients;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
