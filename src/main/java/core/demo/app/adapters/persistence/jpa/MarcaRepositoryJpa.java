@@ -1,6 +1,6 @@
 package core.demo.app.adapters.persistence.jpa;
 
-import core.demo.app.adapters.web.dto.MarcaResponse;
+import core.demo.app.adapters.web.payloads.MarcaResponse;
 import core.demo.app.core.domain.MarcaEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,7 @@ public interface MarcaRepositoryJpa extends JpaRepository<MarcaEntity, UUID> {
 
     Optional<MarcaEntity> findByFipeId(Integer fipeId);
 
-    @Query("SELECT new core.demo.app.adapters.web.dto.MarcaResponse(a.id, a.name, count(m))"
+    @Query("SELECT new core.demo.app.adapters.web.payloads.MarcaResponse(a.id, a.name, count(m))"
             + " FROM ModeloEntity m "
             + " JOIN m.marca a "
             + " GROUP BY a.id"

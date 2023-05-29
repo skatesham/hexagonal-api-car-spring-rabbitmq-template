@@ -1,7 +1,7 @@
 package core.demo.app.core.usecases;
 
 
-import core.demo.app.adapters.web.dto.ModeloResponse;
+import core.demo.app.adapters.web.payloads.ModeloResponse;
 import core.demo.app.core.port.incoming.ReadModeloPageByNameUseCase;
 import core.demo.app.core.port.outgoing.ReadPageModeloByNamePort;
 import lombok.AllArgsConstructor;

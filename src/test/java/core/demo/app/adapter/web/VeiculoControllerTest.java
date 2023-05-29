@@ -2,7 +2,7 @@ package core.demo.app.adapter.web;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import core.demo.app.adapters.config.api_error.ApiErrorEnum;
-import core.demo.app.adapters.web.dto.VeiculoRequest;
+import core.demo.app.adapters.web.payloads.VeiculoRequest;
 import core.demo.app.adapters.persistence.jpa.VeiculoRepositoryJpa;
 import core.demo.app.common.anotations.AppTest;
 import core.demo.app.common.config.MessageSenderMock;

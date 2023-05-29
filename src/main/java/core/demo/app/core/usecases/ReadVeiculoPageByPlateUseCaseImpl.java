@@ -1,7 +1,7 @@
 package core.demo.app.core.usecases;
 
 
-import core.demo.app.adapters.web.dto.VeiculoResponse;
+import core.demo.app.adapters.web.payloads.VeiculoResponse;
 import core.demo.app.core.port.incoming.ReadVeiculoPageByPlateUseCase;
 import core.demo.app.core.port.outgoing.*;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,6 @@
 package core.demo.app.templates;
 
-import core.demo.app.adapters.web.dto.VeiculoRequest;
+import core.demo.app.adapters.web.payloads.VeiculoRequest;
 
 import java.math.BigInteger;
 

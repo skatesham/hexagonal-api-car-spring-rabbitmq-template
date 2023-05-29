@@ -1,6 +1,6 @@
 package core.demo.app.adapters.web;
 
-import core.demo.app.adapters.web.dto.MarcaResponse;
+import core.demo.app.adapters.web.payloads.MarcaResponse;
 import core.demo.app.core.port.incoming.CountModeloByMarcaUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

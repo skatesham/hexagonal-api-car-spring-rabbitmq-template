@@ -8,7 +8,7 @@ import core.demo.app.adapters.persistence.jpa.VeiculoRepositoryJpa;
 import core.demo.app.common.anotations.AppTest;
 import core.demo.app.common.config.MessageSenderMock;
 import core.demo.app.common.UrlUtils;
-import core.demo.app.adapters.web.dto.VeiculoRequest;
+import core.demo.app.adapters.web.payloads.VeiculoRequest;
 import core.demo.app.adapters.messaging.VeiculoRequestedInternalConsumer;
 import core.demo.app.templates.VeiculoRequestTemplates;
 import io.restassured.RestAssured;

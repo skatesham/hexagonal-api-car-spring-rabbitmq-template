@@ -1,6 +1,6 @@
 package core.demo.app.core.port.outgoing;
 
-import core.demo.app.adapters.web.dto.MarcaResponse;
+import core.demo.app.adapters.web.payloads.MarcaResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

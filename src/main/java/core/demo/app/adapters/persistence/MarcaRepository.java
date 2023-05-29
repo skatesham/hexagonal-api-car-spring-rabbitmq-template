@@ -1,7 +1,7 @@
 package core.demo.app.adapters.persistence;
 
 import core.demo.app.adapters.persistence.jpa.MarcaRepositoryJpa;
-import core.demo.app.adapters.web.dto.MarcaResponse;
+import core.demo.app.adapters.web.payloads.MarcaResponse;
 import core.demo.app.core.domain.MarcaEntity;
 import core.demo.app.core.port.outgoing.CountModeloByMarcaPort;
 import core.demo.app.core.port.outgoing.ReadMarcaByFipeIdPort;

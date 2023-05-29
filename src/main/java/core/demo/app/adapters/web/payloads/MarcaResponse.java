@@ -1,4 +1,4 @@
-package core.demo.app.adapters.web.dto;
+package core.demo.app.adapters.web.payloads;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

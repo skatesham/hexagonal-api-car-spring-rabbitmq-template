@@ -1,4 +1,4 @@
-package core.demo.app.adapters.web.dto;
+package core.demo.app.adapters.web.payloads;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

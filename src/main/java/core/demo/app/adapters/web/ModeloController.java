@@ -1,6 +1,6 @@
 package core.demo.app.adapters.web;
 
-import core.demo.app.adapters.web.dto.ModeloResponse;
+import core.demo.app.adapters.web.payloads.ModeloResponse;
 import core.demo.app.core.port.incoming.ReadModeloPageByNameUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

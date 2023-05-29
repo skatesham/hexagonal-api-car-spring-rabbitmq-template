@@ -1,7 +1,7 @@
 package core.demo.app.adapters.persistence;
 
 import core.demo.app.adapters.persistence.jpa.ModeloRepositoryJpa;
-import core.demo.app.adapters.web.dto.ModeloResponse;
+import core.demo.app.adapters.web.payloads.ModeloResponse;
 import core.demo.app.core.domain.ModeloEntity;
 import core.demo.app.core.port.outgoing.ReadModeloByFipeIdPort;
 import core.demo.app.core.port.outgoing.ReadPageModeloByNamePort;

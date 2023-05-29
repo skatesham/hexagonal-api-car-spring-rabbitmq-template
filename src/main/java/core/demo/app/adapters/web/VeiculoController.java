@@ -1,7 +1,7 @@
 package core.demo.app.adapters.web;
 
-import core.demo.app.adapters.web.dto.VeiculoRequest;
-import core.demo.app.adapters.web.dto.VeiculoResponse;
+import core.demo.app.adapters.web.payloads.VeiculoRequest;
+import core.demo.app.adapters.web.payloads.VeiculoResponse;
 import core.demo.app.core.port.incoming.ReadVeiculoPageByPlateUseCase;
 import core.demo.app.core.port.incoming.RequestCreateVeiculoUseCase;
 import core.demo.app.core.domain.VeiculoEntity;

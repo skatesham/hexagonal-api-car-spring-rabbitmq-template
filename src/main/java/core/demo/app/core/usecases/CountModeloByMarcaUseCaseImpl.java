@@ -1,7 +1,7 @@
 package core.demo.app.core.usecases;
 
 
-import core.demo.app.adapters.web.dto.MarcaResponse;
+import core.demo.app.adapters.web.payloads.MarcaResponse;
 import core.demo.app.core.port.incoming.CountModeloByMarcaUseCase;
 import core.demo.app.core.port.outgoing.CountModeloByMarcaPort;
 import lombok.AllArgsConstructor;

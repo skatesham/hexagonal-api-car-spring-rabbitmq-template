@@ -1,4 +1,4 @@
-package core.demo.app.adapters.web.dto;
+package core.demo.app.adapters.web.payloads;
 
 import core.demo.app.adapters.persistence.jpa.ModeloRepositoryJpa;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package core.demo.app.core.usecases;
 
 
-import core.demo.app.adapters.web.dto.VeiculoRequest;
+import core.demo.app.adapters.web.payloads.VeiculoRequest;
 import core.demo.app.core.domain.MarcaEntity;
 import core.demo.app.core.domain.ModeloEntity;
 import core.demo.app.core.domain.VeiculoEntity;
