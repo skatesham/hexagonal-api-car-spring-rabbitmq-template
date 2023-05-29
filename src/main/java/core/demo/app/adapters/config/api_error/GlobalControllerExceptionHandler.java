@@ -1,8 +1,8 @@
 package core.demo.app.adapters.config.api_error;
 
-import core.demo.app.core.services.exceptions.MarcaNotFoundException;
-import core.demo.app.core.services.exceptions.ModeloNotFoundException;
-import core.demo.app.core.services.exceptions.VeiculoAlreadyExistException;
+import core.demo.app.core.usecases.exceptions.MarcaNotFoundException;
+import core.demo.app.core.usecases.exceptions.ModeloNotFoundException;
+import core.demo.app.core.usecases.exceptions.VeiculoAlreadyExistException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

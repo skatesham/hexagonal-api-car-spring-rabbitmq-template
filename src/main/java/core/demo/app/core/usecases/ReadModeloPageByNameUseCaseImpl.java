@@ -1,4 +1,4 @@
-package core.demo.app.core.services;
+package core.demo.app.core.usecases;
 
 
 import core.demo.app.adapters.web.dto.ModeloResponse;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class ModeloService implements ReadModeloPageByNameUseCase {
+public class ReadModeloPageByNameUseCaseImpl implements ReadModeloPageByNameUseCase {
 
     private final ReadPageModeloByNamePort readPageModeloByNamePort;
 

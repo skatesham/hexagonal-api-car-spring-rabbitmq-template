@@ -1,4 +1,4 @@
-package core.demo.app.core.services;
+package core.demo.app.core.usecases;
 
 
 import core.demo.app.adapters.web.dto.MarcaResponse;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class MarcaService implements CountModeloByMarcaUseCase {
+public class CountModeloByMarcaUseCaseImpl implements CountModeloByMarcaUseCase {
 
     private final CountModeloByMarcaPort countModeloByMarcaPort;
 

@@ -1,4 +1,4 @@
-package core.demo.app.core.services.exceptions;
+package core.demo.app.core.usecases.exceptions;
 
 public class VeiculoAlreadyExistException extends RuntimeException {
 
