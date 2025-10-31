@@ -2,12 +2,77 @@
 
 ![coverag](https://img.shields.io/badge/coverage-100%25-darkgreen)
 
+Version DDD and Clean Architecture on [api-car-manager-with-fipe](https://github.com/skatesham/api-car-manager-with-fipe)
+
 API register vehicle indexed by brand and model with external client app price search.
 ![alt text][8]
 
-## Explanation
+---
 
-How works creation:
+## 🧱 Hexagonal Architecture (Ports & Adapters)
+
+### 📘 Concept
+
+Hexagonal (or **Ports and Adapters**) architecture isolates the **core business logic** from external systems.
+It makes the application **independent of frameworks, databases, or delivery mechanisms**.
+
+---
+
+### 🧩 Diagram (ASCII in Markdown)
+
+```
+               +-----------------------------+
+               |        Incoming Adapters     |
+               |   (Controllers, CLI, APIs)   |
+               +-------------▲---------------+
+                             │
+                             │ Port (Input)
+                             │
+               +-------------┴---------------+
+               |        Application Core     |
+               |   (Use Cases / Domain Logic) |
+               +-------------▲---------------+
+                             │
+                             │ Port (Output)
+                             │
+               +-------------┴---------------+
+               |       Outgoing Adapters      |
+               | (DB, REST API, Message Bus)  |
+               +-----------------------------+
+```
+
+---
+
+### ⚙️ Layers Explained
+
+| Layer                         | Description                                                    | Examples                               |
+| ----------------------------- | -------------------------------------------------------------- | -------------------------------------- |
+| **Core (Domain + Use Cases)** | Contains pure business logic. No external dependencies.        | Domain models, services                |
+| **Incoming Adapter**          | Translates external input into commands for the core.          | REST controller, CLI, GraphQL          |
+| **Outgoing Adapter**          | Implements interfaces to external systems defined by the core. | Repository, HTTP client, Message queue |
+
+---
+
+### 🔁 Flow Example
+
+1. **Incoming adapter (API Controller)** receives a request.
+2. It calls a **use case** defined in the **core** (via an input port).
+3. The use case uses an **output port** (interface) to interact with a **repository adapter**.
+4. The **repository adapter** talks to the database.
+5. The **core** remains isolated — easily testable, replaceable, and reusable.
+
+---
+
+### 🌟 Benefits
+
+✅ **Testability:** Core can be tested without DB or frameworks.
+✅ **Replaceable Adapters:** Switch from REST → gRPC, or SQL → NoSQL easily.
+✅ **Maintainability:** Business logic stays clean and stable.
+✅ **Independence:** Frameworks and tools are secondary — not dictating your design.
+
+---
+
+## Operation Functional Flow (part by part)
 
 1. Receive request for create Vehicle by POST Rest entrypoint
 2. Validate database schema constraints, as: UK, Marca and Modelo
